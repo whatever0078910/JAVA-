@@ -16,44 +16,57 @@
 <body style="background-color: yellow;">
  <p style="color:green;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> Welcome to the website. This is a small and simple website about JAVA. You can see the history of it, as well as the functions. With this site, you can get an idea about how the programming language works. 
 
+   <script>
+   function validateForm() {
+      let v =  document.forms["myForm"] ["firstname"].value;
+      if (v == "") {
+         alert("First name must be filled out");
+         return false;
+      }
+      let w = document.forms["myForm"] ["lastname"].value;
+      if (w == "") {
+         alert("Last name must be filled out");
+         return false;
+      }
 
-
-
-
-</p>
- </body>
-
-<h2>Contact Form</h2>
-
-<div class="container">
-  <form action="/action_page.php">
-   <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
- <div>  
-   &nbsp;
-  </div> 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    <div>
-      &nbsp; 
-   </div>
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-   <div>
-      &nbsp; 
-   </div>
-    <label for="email">Email</label>
-    <input type="text" id="email" email="email" placeholder="Your email..">
-   <div>
+      let x = document.forms["myForm"]["email"].value;
+      if (x == "") {
+        alert("Email must be filled out");
+        return false;
+      }
+    }
+    </script>
+   <h2>Contact Form</h2>
+   <form name="myForm" action="form-to-email.php" onsubmit="return validateForm()" method="post">
+   <div class="container">
+     <form action="form-to-email.php">
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <div>  
       &nbsp;
-   </div>
-
-    <input type="submit" value="Submit">
-   <div>
-   <div>&prod;&nbsp; &copy;</div>
-</div>
-
+     </div> 
+        <label for="fname">First Name</label>
+       <input type="text" id="fname" name="firstname" placeholder="Your name..">
+       <div>
+         &nbsp; 
+      </div>
+       <label for="lname">Last Name</label>
+       <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <div>
+         &nbsp; 
+      </div>
+       <label for="email">Email</label>
+       <input type="text" id="email" email="email" placeholder="Your email..">
+      <div>
+         &nbsp;
+      </div>
    
-
-
+       <input type="submit" value="Submit">
+      </form>
+      <div>
+      <div>&prod;&nbsp; &copy;</div>
+   </div>
+   </form>
+   
+   
 
